@@ -26,6 +26,10 @@ progress.addEventListener('click', (e) => {
 video.addEventListener('timeupdate', () => {
     const value = (video.currentTime / video.duration) * 100
     progress.value = value
+
+    if (!video.paused && playback.textContent !== 'pause') {
+        playback.textContent = 'pause'
+    }
 })
 
 // check if the video is paused on load
