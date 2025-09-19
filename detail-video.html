@@ -159,6 +159,9 @@ Dazzle Unicase Bold*/
         height: 15px;
         cursor: pointer;
     }
+    #controls progress[value]::-webkit-progress-value {
+        background-color: black;
+    }
     #controls button {
         cursor: pointer;
         width: 75px;
@@ -214,7 +217,7 @@ The File is a stack of technical documentation about itself. It begins as a disc
 </div>
 
 <main id="artwork-container">
-    <video id="artwork-video" autoplay loop playsinline>
+    <video id="artwork-video" autoplay loop playsinline controls>
         <source src="media/gerilya-what-little-control.mp4" type="video/mp4">
     </video>
 </main>
