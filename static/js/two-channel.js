@@ -22,9 +22,13 @@ function syncTimeUpdate(source, target) {
     seeking = false;
   });
 
+  let lastSync = 0;
   source.addEventListener('timeupdate', () => {
-    if (!seeking && Math.abs(target.currentTime - source.currentTime) > 0.1) {
+    const now = Date.now();
+    // Throttle sync to once every 300ms
+    if (!seeking && Math.abs(target.currentTime - source.currentTime) > 0.3 && (now - lastSync > 300)) {
       target.currentTime = source.currentTime;
+      lastSync = now;
     }
   });
 }
