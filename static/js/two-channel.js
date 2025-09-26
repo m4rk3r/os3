@@ -4,11 +4,9 @@ const lectureVideo = document.getElementById('lecture-video');
 function syncPlayPause(source, target) {
   source.addEventListener('play', () => {
     if (target.paused) target.play();
-    target.currentTime = source.currentTime;
   });
   source.addEventListener('pause', () => {
     if (!target.paused) target.pause();
-    target.currentTime = source.currentTime;
   });
 }
 
